@@ -1,0 +1,14 @@
+﻿@model Books_01.Models.Wall.WallRepository
+@{
+    ViewBag.Title = "WALL";
+}
+
+@foreach (var a in Model.getAllPosts()) 
+{
+    <div style="width:200px; height:200px; border: 2px solid black;">
+        @a.type
+        <br />
+        @a.likes
+    </div>
+}
+    

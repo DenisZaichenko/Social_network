@@ -7,7 +7,7 @@ using Books_01.Models.Authorization;
 
 namespace Books_01.Models.Wall
 {
-    interface IWallPost
+    public interface IWallPost
     {
         List<ApplicationUser> likes { get; }
         Guid id { get; }
