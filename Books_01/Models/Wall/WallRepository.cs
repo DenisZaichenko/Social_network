@@ -12,23 +12,23 @@ namespace Books_01.Models.Wall
         {
             posts = new List<IWallPost>();
             #region FakePosts
-            posts.Add(new FeedBack(new Guid(),3,"GAVNO"));
-            posts.Add(new FeedBack(new Guid(),1,"Хуйня"));
-            posts.Add(new FeedBack(new Guid(),5,"ZAEBIS"));
+            posts.Add(new FeedBack(2,2,3,"GAVNO"));
+            posts.Add(new FeedBack(3,2,1,"Хуйня"));
+            posts.Add(new FeedBack(4,2,5,"ZAEBIS"));
             #endregion FakePosts
         }
-        public void DeletePost(Guid id)
+        public void DeletePost(int id)
         {
             posts.RemoveAll(m => m.id == id);
         }
-        public void MakeRepost(Guid sourcePostId)
+        public void MakeRepost(int id,int sourcePostId)
         {
-            Repost rep = new Repost(sourcePostId);
+            Repost rep = new Repost(1,sourcePostId);
             posts.Add(rep);
         }
-        public void AddFeedBack(Guid bookId, string text, int rating)
+        public void AddFeedBack(int id, int bookId, string text, int rating)
         {
-            posts.Add(new FeedBack(bookId, rating, text));
+            posts.Add(new FeedBack(id,bookId, rating, text));
         }
         public IEnumerable<IWallPost> getAllPosts()
         {

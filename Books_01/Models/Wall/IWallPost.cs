@@ -9,8 +9,8 @@ namespace Books_01.Models.Wall
 {
     public interface IWallPost
     {
-        List<ApplicationUser> likes { get; }
-        Guid id { get; }
+        IEnumerable<ApplicationUser> getLikes();
+        int id { get; }
         PostType type { get; }
         void Like(ApplicationUser user);
         void DisLike(ApplicationUser user);

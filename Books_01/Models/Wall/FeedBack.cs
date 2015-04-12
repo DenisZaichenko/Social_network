@@ -8,15 +8,16 @@ namespace Books_01.Models.Wall
 {
     public class FeedBack : IWallPost
     {
-        public PostType type { get { return type; } private set { type = value; } }
-        public Guid id { get { return id; } private set { id = value; } }
-        public List<ApplicationUser> likes { get { return (List<ApplicationUser>)likes.Select(n => n); } }
+        public PostType type { get; private set; }
+        public int id { get; private set; }
+        private List<ApplicationUser> likes;
         string text;
-        Guid bookId;
+        int bookId;
         int rating;
-        public FeedBack(Guid bookId, int rating, string text)
+        public FeedBack(int id, int bookId, int rating, string text)
         {
-            id = new Guid();
+            likes = new List<ApplicationUser>();
+            this.id = id;
             this.bookId = bookId;
             this.rating = rating;
         }
@@ -28,6 +29,10 @@ namespace Books_01.Models.Wall
         public void DisLike(ApplicationUser user)
         {
             likes.RemoveAll(m => m == user);
+        }
+        public IEnumerable<ApplicationUser> getLikes()
+        {
+            return likes.Select(n => n);
         }
     }
 }

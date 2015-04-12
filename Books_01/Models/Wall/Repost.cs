@@ -9,16 +9,16 @@ namespace Books_01.Models.Wall
     public class Repost:IWallPost
     {
         public PostType type { get { return type; } private set { type = value; } }
-        public Guid id { get { return id; } private set { id= value; } }
-        public List<ApplicationUser> likes { get { return (List<ApplicationUser>)likes.Select(n => n); } }
+        public int id { get { return id; } private set { id= value; } }
+        private List<ApplicationUser> likes;
         DateTime date;
-        Guid sourceID;
-        public Repost(Guid sourcePostId)
+        int sourceID;
+        public Repost(int id,int sourcePostId)
         {
             sourceID = sourcePostId;
             date = DateTime.Now;
             type = PostType.Repost;
-            id = new Guid();
+            this.id = id;
         }
         public void Like(ApplicationUser user)
         {
@@ -27,6 +27,10 @@ namespace Books_01.Models.Wall
         public void DisLike(ApplicationUser user)
         {
             likes.RemoveAll(m => m==user);
+        }
+        public IEnumerable<ApplicationUser> getLikes()
+        {
+            return likes.Select(n => n);
         }
     }
 }

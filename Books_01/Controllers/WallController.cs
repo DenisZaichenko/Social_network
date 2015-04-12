@@ -17,7 +17,7 @@ namespace Books_01.Controllers
         }
         public ActionResult Wall()
         {
-            return View();
+            return View(wallReppo);
         }
     }
 }
