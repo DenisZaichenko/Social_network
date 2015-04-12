@@ -159,6 +159,11 @@
     <Compile Include="Models\Authorization\AppUserStore.cs" />
     <Compile Include="Models\Authorization\ViewModels\LoginViewModel.cs" />
     <Compile Include="Models\Authorization\ViewModels\RegisterViewModel.cs" />
+    <Compile Include="Models\Wall\FeedBack.cs" />
+    <Compile Include="Models\Wall\IWallPost.cs" />
+    <Compile Include="Models\Wall\PostType.cs" />
+    <Compile Include="Models\Wall\Repost.cs" />
+    <Compile Include="Models\Wall\WallRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
