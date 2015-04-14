@@ -129,6 +129,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\default.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -160,6 +161,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WallController.cs" />
@@ -173,6 +175,7 @@
     <Compile Include="Models\Authorization\ViewModels\LoginViewModel.cs" />
     <Compile Include="Models\Authorization\ViewModels\RegisterViewModel.cs" />
     <Compile Include="Models\Book\Book.cs" />
+    <Compile Include="Models\Book\BookRepository.cs" />
     <Compile Include="Models\Wall\FeedBack.cs" />
     <Compile Include="Models\Wall\IWallPost.cs" />
     <Compile Include="Models\Wall\PostType.cs" />
@@ -188,6 +191,7 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Wall\Wall.cshtml" />
+    <Content Include="Views\Books\Books.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

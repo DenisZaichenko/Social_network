@@ -9,14 +9,17 @@ namespace Books_01.Models.Book
 {
     public class Book:Controller
     {
-        string title;
-        string author;// можно будет сделать его отдельным классом и смотреть все его книги
-        DateTime year;
-        string imagePath;
-        List<FeedBack> feedBacks;
-
-        public Book()
+        public int id;
+        public string title;
+        public string author;// можно будет сделать его отдельным классом и смотреть все его книги
+        public DateTime year;
+        public string imagePath="Content/images/default.png";
+        public List<FeedBack> feedBacks;
+        public Book(string title,string author, DateTime year)
         {
+            this.title = title;
+            this.author = author;
+            this.year = year;
             feedBacks = new List<FeedBack>();
         }
 

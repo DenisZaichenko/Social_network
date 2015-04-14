@@ -1,0 +1,14 @@
+﻿@model Books_01.Models.Book.BookRepository
+@{
+    ViewBag.Title = "Books";
+}
+
+<h2>Books</h2>
+@foreach(var book in Model.getAllBooks())
+{
+    <div style="width:600px;height:200px; border: 2px solid blue">
+        <img src="@book.imagePath" /> @book.title+<br/>
+        год @book.year
+    </div>
+}
+
